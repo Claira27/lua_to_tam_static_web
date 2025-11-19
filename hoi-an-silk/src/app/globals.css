@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Classic Vietnamese Silk Colors */
+  --gold-primary: #D4AF37;
+  --gold-light: #E8D4A0;
+  --gold-dark: #B8941E;
+
+  --brown-primary: #5C4033;
+  --brown-light: #8B6F47;
+  --brown-dark: #3E2723;
+
+  --red-primary: #8B0000;
+  --red-light: #A52A2A;
+  --red-dark: #660000;
+
+  --ivory-primary: #FFFFF0;
+  --ivory-light: #FAFAF5;
+  --ivory-dark: #F5F5DC;
+
+  /* Neutral Tones */
+  --charcoal: #2C2C2C;
+  --stone: #D4C5B9;
+  --sand: #E6DDD2;
+
+  --background: var(--ivory-primary);
+  --foreground: var(--brown-dark);
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-gold-primary: var(--gold-primary);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+
+  --color-brown-primary: var(--brown-primary);
+  --color-brown-light: var(--brown-light);
+  --color-brown-dark: var(--brown-dark);
+
+  --color-red-primary: var(--red-primary);
+  --color-red-light: var(--red-light);
+  --color-red-dark: var(--red-dark);
+
+  --color-ivory-primary: var(--ivory-primary);
+  --color-ivory-light: var(--ivory-light);
+  --color-ivory-dark: var(--ivory-dark);
+
+  --color-charcoal: var(--charcoal);
+  --color-stone: var(--stone);
+  --color-sand: var(--sand);
+
+  /* Typography - Serif for elegance, Sans-serif for readability */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing for luxury feel */
+  --spacing-section: 8rem;
+  --spacing-content: 4rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Only apply default margins to elements without utility classes */
+:where(h1, h2, h3, h4, h5, h6):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]) {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--brown-dark);
+  margin-bottom: 0.75em;
+}
+
+:where(h1):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]) {
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+:where(h2):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]) {
+  line-height: 1.25;
+  margin-bottom: 0.6em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--brown-dark);
+}
+
+:where(p):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]) {
+  margin-bottom: 1em;
+  line-height: 1.75;
+}
+
+p {
+  line-height: 1.75;
+}
+
+:where(ul, ol):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]):not([class*="p-"]):not([class*="pl-"]) {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+:where(li):not([class*="m-"]):not([class*="my-"]):not([class*="mb-"]) {
+  margin-bottom: 0.5em;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-primary) var(--ivory-light);
+}
